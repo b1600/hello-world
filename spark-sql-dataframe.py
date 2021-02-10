@@ -1,6 +1,7 @@
 from pyspark.sql import SparkSession
 
 spark = SparkSession.builder.appName("SparkSQL").getOrCreate()
+spark.sparkContext.setLogLevel("ERROR")
 
 people = spark.read.option("header", "true").option("inferSchema", "true")\
     .csv("fakefriends-header.csv")
