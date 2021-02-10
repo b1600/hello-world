@@ -3,6 +3,7 @@ from pyspark.sql import functions as func
 from pyspark.sql.types import StructType, StructField, StringType, IntegerType, FloatType
 
 spark = SparkSession.builder.appName("MinTemperatures").getOrCreate()
+spark.sparkContext.setLogLevel("ERROR")
 
 schema = StructType([ \
                      StructField("stationID", StringType(), True), \
