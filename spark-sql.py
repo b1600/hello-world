@@ -3,6 +3,7 @@ from pyspark.sql import Row
 
 # Create a SparkSession
 spark = SparkSession.builder.appName("SparkSQL").getOrCreate()
+spark.sparkContext.setLogLevel("ERROR")
 
 def mapper(line):
     fields = line.split(',')
