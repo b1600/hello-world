@@ -3,6 +3,7 @@ from pyspark.sql import Row
 from pyspark.sql import functions as func
 
 spark = SparkSession.builder.appName("FriendsByAge").getOrCreate()
+spark.sparkContext.setLogLevel("ERROR")
 
 lines = spark.read.option("header", "true").option("inferSchema", "true").csv("fakefriends-header.csv")
 
