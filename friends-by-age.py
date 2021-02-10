@@ -2,6 +2,7 @@ from pyspark import SparkConf, SparkContext
 
 conf = SparkConf().setMaster("local").setAppName("FriendsByAge")
 sc = SparkContext(conf = conf)
+sc.setLogLevel("ERROR")
 
 def parseLine(line):
     fields = line.split(',')
